@@ -21,6 +21,13 @@ adjectiveInput.addEventListener("keyup", function(event) {
      }
 });
 /* ==============================================
+     Capitalize
+============================================== */
+function capitalize(string) {
+     let lower = string.toLowerCase();
+     return lower.charAt(0).toUpperCase() + lower.slice(1);
+}
+/* ==============================================
      Add Adjective
 ============================================== */
 function addAdjective(adjective) {
@@ -38,13 +45,19 @@ function formatAdjective(adjective) {
      Show Result
 ============================================== */
 function showResult(adjective) {
-     currentResult += formatAdjective(adjective) + " ";
+     currentResult += formatResult(adjective) + " ";
      result.innerHTML = `<a onClick="clearResult()">${currentResult + noun}</a>`;
 }
 /* ==============================================
      Format Result
 ============================================== */
 function formatResult(adjective) {
+     if (currentResult.length > 0) {
+          adjective = adjective.toLowerCase();
+     } else {
+          adjective = capitalize(adjective);
+     }
+
      return adjective.replace("´", "'");
 }
 /* ==============================================
