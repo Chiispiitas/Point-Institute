@@ -1,0 +1,153 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* Main */
+html, body {
+  margin: 0px;
+  height: 100vh;
+}
+/* Body */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Monserrat", sans-serif;
+  font-size: calc(1vw + 2vh);
+  color: rgb(255, 255, 255);
+  background-color: rgb(103, 190, 57);
+  background-image: url("../img/bg.png");
+  background-size: cover;
+}
+/* Anchor */
+a {
+  display: block;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.25s;
+}
+/* Anchor Hover */
+a:hover {
+  color: rgb(238, 238, 238);
+  transform: scale(1.5);
+}
+/* Input Text */
+input[type="text"] {
+  border: none;
+  border-radius: 10px;
+  width: 90%;
+  height: 1.2em;
+  font-size: 1.2em;
+  background-color: rgb(255, 255, 255);
+  outline: none;
+}
+/*--------------------------------------------------------------
+# Main Container
+--------------------------------------------------------------*/
+/* Main */
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  margin: auto;
+  width: 80%;
+  height: 95%;
+}
+/* Main Selection*/
+#main-container ::selection {
+  background-color: transparent;
+}
+/*--------------------------------------------------------------
+# Upper Container
+--------------------------------------------------------------*/
+/* Main */
+#upper-container {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.555);
+  border-radius: 40px;
+  width: 100%;
+  height: 82%;
+}
+/*--------------------------------------------------------------
+# Adjective Container
+--------------------------------------------------------------*/
+/* Main */
+#adjective-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  border: none;
+  border-radius: 40px;
+  background-color: rgb(64, 137, 30);
+  width: 30%;
+  height: 95%;
+  margin-right: 4%;
+}
+/*--------------------------------------------------------------
+# Adjectives
+--------------------------------------------------------------*/
+/* Main */
+#adjectives {
+  width: 90%;
+  height: 90%;
+}
+/*--------------------------------------------------------------
+# Input
+--------------------------------------------------------------*/
+/* Main */
+#input {
+  width: 85%;
+  height: 15%;
+}
+/*--------------------------------------------------------------
+# Noun Container
+--------------------------------------------------------------*/
+/* Main */
+#noun-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 57%;
+  height: 95%;
+}
+/*--------------------------------------------------------------
+# Noun
+--------------------------------------------------------------*/
+/* Main */
+#noun {
+  border: none;
+  border-radius: 40px;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+}
+/*--------------------------------------------------------------
+# Lower Container
+--------------------------------------------------------------*/
+/* Main */
+#lower-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+}
+/*--------------------------------------------------------------
+# Result
+--------------------------------------------------------------*/
+/* Main */
+#result {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  width: fit-content;
+  height: fit-content;
+}

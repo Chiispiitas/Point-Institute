@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==============================================
+    *  Head
+============================================== -->
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Pass the Bomb!</title>
+    <meta content="Point Institute Party Games - David Santana" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Main CSS -->
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<!-- ==============================================
+    *  Body
+============================================== -->
+<body>
+    
+    <div id="scene-container">
+
+    <div class="scene" id="scene-title">
+
+        <div>
+            <img src="img/game-logo.png" width="75%">
+        </div>
+
+        <button id="btn-title-start-now">
+            <span >Start</span>
+        </button>
+
+    </div>
+
+    <div class="scene" id="scene-participants">
+
+        <div class="row justify-content-between">
+
+            <div class="col-md-1" id="skill-back">
+                <i class="bi bi-x-circle" id="btn-skill-back"></i>
+            </div>
+
+            <div class="col-md-1" id="col-separator"></div>
+
+            <div class="col-md-10 vertical-align-middle" id="skill-info">
+                <h1 id="skill-title"></h1>
+                <h2 id="skill-description"></h2>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="scene" id="scene-results">
+
+        <div class="row justify-content-between">
+
+            <div class="col-md-1" id="indications-back">
+                <i class="bi bi-arrow-left-circle" id="btn-indications-back"></i>
+            </div>
+
+            <div class="col-md-1" id="col-separator"></div>
+
+            <div class="col-md-8" id="indications-info">
+                <h1>Indications</h1>
+                <ul>
+                    <li>
+                        Each section has its own set of instructions, shown right before starting it.
+                    </li>
+
+                    <li>
+                        Each section has a total of 20 questions.
+                    </li>
+
+                    <li>
+                        The listening section will have a bigger impact on your final score.
+                    </li>
+
+                    <li>
+                        Your finishing time will have an impact on your final score.
+                    </li>
+
+                    <li>
+                        Your final score will be ranked using the 
+                        <a href="https://www.cambridgeenglish.org/exams-and-tests/cefr/" target="_blank">CEFR</a> 
+                        scale.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-1" id="col-separator"></div>
+
+            <div class="col-md-1" id="row-separator"></div>
+
+            <div class="col-md-1" id="indications-next">
+                <i class="bi bi-arrow-left-circle" id="m-btn-indications-back"></i>
+                <i class="bi bi-arrow-right-circle" id="btn-indications-next"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <!-- Database -->
+    <script src="js/database.js"></script>
+
+    <!-- Scenes -->
+    <script src="js/scenes/scene-manager.js"></script>
+    <script src="js/scenes/scene-title.js"></script>
+    <script src="js/scenes/scene-game.js"></script>
+    <script src="js/scenes/scene-results.js"></script>
+
+</body>
+</html>
