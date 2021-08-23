@@ -22,10 +22,11 @@ function generateNewWord() {
      let index = Math.floor(Math.random() * words.length);
      let value = words[index];
      
-     while (used.includes(value)) {
+     if (used.includes(value)) {
           generateNewWord();
+     } else {
+          used.push(value);
+          word.innerHTML = value;
      }
 
-     used.push(value);
-     word.innerHTML = value;
 }
