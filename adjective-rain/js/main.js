@@ -4,7 +4,7 @@
      Made by: David Santana
 ============================================== */
 
-const noun = "home."
+const noun = "house."
 
 var adjectiveString = "";
 var adjectiveList = document.getElementById("adjectives");
