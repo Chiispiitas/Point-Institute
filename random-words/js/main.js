@@ -5,8 +5,6 @@
 ============================================== */
 
 const word = document.getElementById("word")
-const words = ["Car", "House", "Airplane", "Computer", "Island", "Suit", "Cat", "Dog",
-               "Powerlifter", "Bird", "Butterfly"]
 var used = []
 
 /* ==============================================
@@ -23,10 +21,11 @@ function generateNewWord() {
      let value = words[index];
      
      if (used.includes(value)) {
+          if (used.length == words.length) { used = []; }
           generateNewWord();
      } else {
           used.push(value);
-          word.innerHTML = value;
+          word.textContent = value;
      }
 
 }
