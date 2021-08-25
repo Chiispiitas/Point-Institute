@@ -1,5 +1,8 @@
 "use strict";
 /* ==============================================
-     Scene Test
+     Database
      Made by: David Santana
 ============================================== */
+
+var participants = [];
+var participantsCounter = 0;
