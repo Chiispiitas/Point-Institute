@@ -1,6 +1,6 @@
 "use strict";
 /* ==============================================
-     Scene Title
+     Scene Participants
      Made by: David Santana
 ============================================== */
 
