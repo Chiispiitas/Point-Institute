@@ -8,17 +8,21 @@ var listParticipants = document.getElementById("list-participants");
 var inputParticipant = document.getElementById("input-participants");
 
 /* ==============================================
-     Add Button Listeners
+     Add Button Listener
 ============================================== */
-document.getElementById("btn-title-start-now").addEventListener( "click", function(){ 
-     sceneLoad("scene-participants"); 
+document.getElementById("btn-participants-next").addEventListener( "click", function(){ 
+     if (Object.keys(participantsHash).length > 1) {
+          participantHashToArray();
+          sceneLoad("scene-countdown");
+          startCountdown();
+     } 
 } );
 /* ==============================================
      Add Input Listener
 ============================================== */
-inputParticipant.addEventListener("keyup", function(event) {
+inputParticipant.addEventListener("keydown", function(event) {
      if (event.code === "Enter") {
-          if (participantsCounter < 10) { addParticipant(inputParticipant.value); }
+          if (participantsCounter < 10) { addParticipant(inputParticipant.value.trim()); }
      }
 });
 /* ==============================================
@@ -26,6 +30,7 @@ inputParticipant.addEventListener("keyup", function(event) {
 ============================================== */
 function addParticipant(name) {
      inputParticipant.value = "";
+     if (name == "") { return; }
      listParticipants.innerHTML += generateParticipantAnchor(name);
      participantsCounter += 1;
      if (participantsCounter == 10) { inputParticipant.disabled = true; }
@@ -34,14 +39,16 @@ function addParticipant(name) {
      Generate Participant Anchor
 ============================================== */
 function generateParticipantAnchor(name) {
-     let id = `${name}-${participantsCounter}${Math.floor(Math.random() * 999) + 1}`;
-     return `<a id="${id}" onClick="removeParticipant('${id}')">${name}</a>`;
+     let id = `${name}-${participantsCounter}-${Math.floor(Math.random() * 999999) + 1}`;
+     participantsHash[id] = name;
+     return `<a id="${id}" onClick="removeParticipant('${id}');">${name}</a>`;
 }
 /* ==============================================
      Remove Participant
 ============================================== */
 function removeParticipant(id) {
      participantsCounter -= 1;
+     delete participantsHash[id];
      inputParticipant.disabled = false;
      document.getElementById(id).outerHTML = "";
 }
