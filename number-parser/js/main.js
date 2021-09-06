@@ -4,58 +4,47 @@
      Made by: David Santana
 ============================================== */
 
-const word = document.getElementById("word")
-var used = []
+const inputNumber = document.getElementById("input-number");
+const textResult = document.getElementById("text-result");
 
 /* ==============================================
-     Add Event Listener
+     Add Input Listener
 ============================================== */
-document.getElementById("new-word").addEventListener( "click", function(){ 
-     generateNewWord(); 
-} );
+inputNumber.addEventListener("keypress", function(event) {
+     filterInput();
+     updateInputSize();
+});
+inputNumber.addEventListener("keyup", function(event) {
+     filterInput();
+     updateResult();
+});
 /* ==============================================
-     Generate New Word
+     Update Result
 ============================================== */
-function generateNewWord() {
-     let index = Math.floor(Math.random() * words.length);
-     let value = words[index];
-     
-     if (used.includes(value)) {
-          if (used.length == words.length) { used = []; }
-          generateNewWord();
-     } else {
-          used.push(value);
-          word.textContent = value;
+function updateResult() {
+     if (inputNumber.value != "") {
+          textResult.textContent = capitalize(toWords(parseInt(inputNumber.value.replace(/\.|,/g, ""))));
      }
-
+     else {
+          textResult.textContent = "";
+     }
 }
 /* ==============================================
-    Create button ripple.
+     Filter Input
 ============================================== */
-function createRipple(event) {
-     const button = event.currentTarget;
-   
-     const circle = document.createElement("span");
-     const diameter = Math.max(button.clientWidth, button.clientHeight);
-     const radius = diameter / 2;
-   
-     circle.style.width = circle.style.height = `${diameter}px`;
-     circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-     circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-     circle.classList.add("ripple");
-   
-     const ripple = button.getElementsByClassName("ripple")[0];
-   
-     if (ripple) {
-         ripple.remove();
+function filterInput() {
+     let filtered = inputNumber.value.replace(/[^\d\.,]| /g, "");
+     if (filtered.replace(/\.|,/g, "").length >= 15) {
+          inputNumber.value = filtered.substring(0, filtered.length - 1);
      }
-   
-     button.appendChild(circle);
- }
- /* ==============================================
-     Add button click listener.
- ============================================== */
- const buttons = document.getElementsByTagName("button");
- for (const button of buttons) {
-     button.addEventListener("click", createRipple);
- }
+     else {
+          inputNumber.value = filtered;
+     }
+}
+/* ==============================================
+     Capitalize
+============================================== */
+function capitalize(string) {
+     let lower = string.toLowerCase();
+     return string.charAt(0).toUpperCase() + lower.slice(1);
+}
