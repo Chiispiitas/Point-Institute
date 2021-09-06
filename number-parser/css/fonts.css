@@ -1,0 +1,14 @@
+/*--------------------------------------------------------------
+# Monserrat
+--------------------------------------------------------------*/
+/* Regular */
+@font-face {
+	font-family: "Ubuntu";
+	src: url("../fonts/Ubuntu-Regular.ttf");
+}
+/* Bold */
+@font-face {
+	font-family: "Ubuntu";
+	src: url("../fonts/Ubuntu-Bold.ttf");
+	font-weight: bold;
+}
