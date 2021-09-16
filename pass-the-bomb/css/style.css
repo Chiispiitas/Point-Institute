@@ -176,11 +176,27 @@ input[type="text"]:disabled {
   opacity: 1;
   visibility: visible;
 }
-/* Button */
-#scene-title button {
+/* Image Game Logo */
+#img-game-logo {
+  position: absolute;
+  top: 12%;
+  left: 20%;
+}
+/* Button Start */
+#btn-title-start-now {
+  position: absolute;
+  left: 40%;
+  bottom: 7%;
   width: 20%;
   height: 10%;
-  margin-top: 50px;
+}
+/* Button Options */
+#btn-title-options {
+  position: absolute;
+  left: 4%;
+  bottom: 7%;
+  width: 20%;
+  height: 10%;
 }
 /*--------------------------------------------------------------
 # Scene Participants
@@ -411,4 +427,14 @@ input[type="text"]:disabled {
   justify-content: center;
   place-items: center;
   text-align: center;
+}
+/*--------------------------------------------------------------
+# Logo Point
+--------------------------------------------------------------*/
+/* Image */
+#logo-point {
+  position: absolute;
+  bottom: 7%;
+  right: 4%;
+  height: 10%;
 }

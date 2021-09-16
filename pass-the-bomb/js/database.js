@@ -4,12 +4,13 @@
      Made by: David Santana
 ============================================== */
 
-var wordPool = dictionary;
+var dictionary = defaultDictionary;
+var letters = defaultLetters;
 var participantsHash = {};
 var participantsArray = [];
 var participantsCounter = 0;
 var usedWords = [];
-var memoLetters = "";
+var usedLetters = [];
 
 /* ==============================================
      Participant Class
@@ -17,7 +18,7 @@ var memoLetters = "";
 function Participant(name) {
      this.name = name;
      this.lives = 3;
-}   
+}
 /* ==============================================
      Participant Hash to Array
 ============================================== */
@@ -29,7 +30,7 @@ function participantHashToArray() {
 /* ==============================================
      Count Element In Array
 ============================================== */
-function countElementIn(array, element) {
+function countArray(array, element) {
      var count = 0;
      for(var i = 0; i < array.length; ++i){
          if(array[i] == element)

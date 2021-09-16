@@ -138,3 +138,13 @@ p:hover {
   background-color: rgba(0, 0, 0, 0.336);
   outline: none;
 }
+/*--------------------------------------------------------------
+# Logo Point
+--------------------------------------------------------------*/
+/* Image */
+#logo-point {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  height: 10%;
+}

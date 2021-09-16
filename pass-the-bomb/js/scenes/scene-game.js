@@ -21,14 +21,14 @@ var currentParticipantIndex = -1;
 var currentParticipantName = "";
 var lettersString = "";
 var lettersPool = [];
-var usedLetters = {};
+var typedLetters = {};
 
 /* ==============================================
      Add Button Listeners
 ============================================== */
 document.getElementById("listener-game").addEventListener( "click", function(){ 
      toggleGamePause(); 
-} );
+});
 /* ==============================================
      Add Input Listener
 ============================================== */
@@ -101,7 +101,7 @@ function generatePlayerElement(participant) {
 ============================================== */
 function validateInputWord() {
      let word = inputWord.value.toLowerCase();
-     return (word.match(getValidationRegex()) && !usedWords.includes(word) && wordPool.includes(word));
+     return (word.match(getValidationRegex()) && !usedWords.includes(word) && dictionary.includes(word));
 }
 /* ==============================================
      Get Validation Regex
@@ -118,7 +118,7 @@ function drawInput() {
           let requiredLetters = lettersString.split("");
           containerLetters.innerHTML = "";
           inputWord.value.split("").forEach(i => {
-               if (requiredLetters.includes(i) && (countElementIn(untypedLetters, i) < countElementIn(requiredLetters, i))) {
+               if (requiredLetters.includes(i) && (countArray(untypedLetters, i) < countArray(requiredLetters, i))) {
                     addItemLetter(i, "item-required-letter typed");
                     requiredLetters.splice(requiredLetters.indexOf(i), 1);
                }
@@ -153,11 +153,11 @@ function addItemLetter(word, type) {
 function getUntypedLetters() {
      let result = [];
      let count = 1;
-     usedLetters = {};
+     typedLetters = {};
      lettersString.split("").forEach(i => {
-          count = (usedLetters[i]) ? usedLetters[i] : 1;
-          if (countElementIn(inputWord.value.split(""), i) < count) { result.push(i); }
-          if (usedLetters[i]) { usedLetters[i] += 1 } else { usedLetters[i] = 2 }
+          count = (typedLetters[i]) ? typedLetters[i] : 1;
+          if (countArray(inputWord.value.split(""), i) < count) { result.push(i); }
+          if (typedLetters[i]) { typedLetters[i] += 1 } else { typedLetters[i] = 2 }
      })
      return result;
 }
@@ -288,11 +288,11 @@ function updateTextYoureUp() {
 function generateLetters() {
      containerLetters.innerHTML = "";
      lettersString = lettersPool[Math.floor(Math.random() * lettersPool.length)];
-     if (memoLetters == lettersString) { 
+     if (usedLetters.at(-1) == lettersString || countArray(usedLetters, lettersString) > 5) { 
           generateLetters();
      }
      else {
-          memoLetters = lettersString;
+          usedLetters.push(lettersString);
           drawInput();
      }
 }

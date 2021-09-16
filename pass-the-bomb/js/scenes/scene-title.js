@@ -9,6 +9,5 @@
 ============================================== */
 document.getElementById("btn-title-start-now").addEventListener( "click", function(){ 
      sceneLoad("scene-participants");
-     musicTitle.stop();
-     musicTitle.play();
+     if (!musicTitle.playing()) { musicTitle.play(); }
 } );

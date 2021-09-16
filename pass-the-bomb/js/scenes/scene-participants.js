@@ -8,15 +8,18 @@ var listParticipants = document.getElementById("list-participants");
 var inputParticipant = document.getElementById("input-participants");
 
 /* ==============================================
-     Add Button Listener
+     Add Button Listeners
 ============================================== */
+document.getElementById("btn-participants-back").addEventListener( "click", function(){ 
+     sceneLoad("scene-title");
+});
 document.getElementById("btn-participants-next").addEventListener( "click", function(){ 
-     if (Object.keys(participantsHash).length > 1) {
+     if (Object.keys(participantsHash).length >= 2) {
           participantHashToArray();
           sceneLoad("scene-countdown");
           startCountdown();
      } 
-} );
+});
 /* ==============================================
      Add Input Listener
 ============================================== */
@@ -52,3 +55,9 @@ function removeParticipant(id) {
      inputParticipant.disabled = false;
      document.getElementById(id).outerHTML = "";
 }
+/* ==============================================
+     Update Participants
+============================================== */
+var updateParticipants = setInterval(function() {
+     if (sceneCurrent == "scene-participants") { inputParticipant.focus(); }
+}, 1);
