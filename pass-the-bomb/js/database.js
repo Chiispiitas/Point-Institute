@@ -17,7 +17,7 @@ var usedLetters = [];
 ============================================== */
 function Participant(name) {
      this.name = name;
-     this.lives = 3;
+     this.lives = 2;
 }
 /* ==============================================
      Participant Hash to Array

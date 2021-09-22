@@ -230,22 +230,22 @@ function nextRound() {
      updateTextYoureUp();
      generateLetters();
      createPlayersList();
-     //toggleGamePause();
+     toggleGamePause();
 }
 /* ==============================================
      Get Difficulty
 ============================================== */
 function getDifficulty() {
      if (rounds > 25) {
-          roundBaseTime = 1800;
+          roundBaseTime = 2200;
           lettersPool = letters.hard;
      }
      else if (rounds > 15) {
-          roundBaseTime = 2400;
+          roundBaseTime = 2800;
           lettersPool = letters.medium;
      }
      else {
-          roundBaseTime = 3000;
+          roundBaseTime = 3500;
           lettersPool = letters.easy;
      }
 }
@@ -265,7 +265,7 @@ function getMusic() {
 ============================================== */
 function getRoundMaxTime() {
      roundMaxTime = roundBaseTime - (100 * roundStreak);
-     if (roundMaxTime < 400) { roundMaxTime = 400; }
+     if (roundMaxTime < 600) { roundMaxTime = 600; }
 }
 /* ==============================================
      Advance Participant Index
@@ -313,7 +313,7 @@ function loseRound() {
      generateLetters();
      inputWord.value = ""
      createPlayersList();
-     //toggleGamePause();
+     toggleGamePause();
 }
 /* ==============================================
      Lose Participant
