@@ -174,7 +174,7 @@ var updateGame = setInterval(function() {
      Update Input
 ============================================== */
 function updateInput() {
-     inputWord.value = inputWord.value.replace(" ", "");
+     inputWord.value = inputWord.value.replace(" ", "").toLowerCase();
      inputWord.focus();
 }
 /* ==============================================
