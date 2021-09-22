@@ -81,13 +81,13 @@ function generatePlayerElement(participant) {
           content += " 💙💙💙";
      }
      else if (participant.lives == 2) {
-          content += " 💙💙🤍";
+          content += " 💙💙";
      }
      else if (participant.lives == 1) {
-          content += " 💙🤍🤍";
+          content += " 💙🤍";
      }
      else {
-          content += " 🤍🤍🤍";
+          content += " 🤍🤍";
      }
      if (participant == participantsArray[currentParticipantIndex]) {
           return `<p class="current-participant">${content}</p>`;
