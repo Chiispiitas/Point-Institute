@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==============================================
+    *  Head
+============================================== -->
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>E-mail Open Cloze Exercise</title>
+    <meta content="Educational resource made by David S." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<!-- ==============================================
+    *  Body
+============================================== -->
+<body>
+    
+    <div id="container">
+
+        <div id="container-prompt">
+            <h1>Writing a Formal E-mail (Exercise)</h1>
+            <p>Fill the gaps found in this text with 2 to 5 words related to common expressions used in formal e-mails and correspondence.<br>
+            Sometimes you will have sidenotes in parentheses providing context or clues.</p>
+        </div>
+
+        <span id="row-separator"></span>
+        <div id="container-text">
+            <p>
+                Dear <span id="a1" class="input" contenteditable onkeypress="return (this.innerText.length <= 25)"></span></span><span id="r1"></span>, <span class="note">(unknown recipient)</span>
+                <br><br>
+                The reason <span id="a2" class="input" contenteditable onkeypress="return (this.innerText.length <= 25)"></span></span><span id="r2"></span> this e-mail to inquire about the website 
+                audit services you posted on your website.
+                <br><br>
+                As I understand, you offer services to audit businesses’ websites and provide personalized insight into what improvements can be made. 
+                I’d like to request further information <span id="a3" class="input" contenteditable onkeypress="return (this.innerText.length <= 25)"></span></span><span id="r3"></span> 
+                <span class="note">(regard)</span> your pricing as well as the scope of the work that will be performed, including specific services that can 
+                be expected.
+                <br><br>
+                I <span id="a4" class="input" contenteditable onkeypress="return (this.innerText.length <= 25)"></span><span id="r4"></span> to receiving your response.<br><br>
+                <span id="a5" class="input" contenteditable onkeypress="return (this.innerText.length <= 25)"></span></span><span id="r5"></span> luck,<br><br>
+                <i>El Pepe</i>
+            </p>
+        </div>
+
+        <div id="container-buttons">
+            <button id= "check-btn">Check</button>
+            <button id= "clear-btn">Clear</button>
+        </div>
+    
+    </div>
+
+    <!-- Modules -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
